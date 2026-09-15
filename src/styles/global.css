@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Aeonik Pro";
+  src: url("./fonts/Aeonik Pro Light.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Aeonik Pro";
+  src: url("./fonts/Aeonik Pro Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Aeonik Pro";
+  src: url("./fonts/Aeonik Pro Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Aeonik Pro";
+  src: url("./fonts/Aeonik Pro Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+  --primary: #2997ff;
+  --primary-foreground: #d8ebff;
+  --primary-hover: #52abff;
+  --background: #000000;
+  --foreground: #f0f3f6;
+  --card: #0d0f12;
+  --card-foreground: #f0f3f6;
+  --popover: #000000;
+  --popover-foreground: #f0f3f6;
+  --secondary: #1b1f23;
+  --secondary-foreground: #f0f3f6;
+  --muted: #0d0f12;
+  --muted-foreground: #9096a5;
+  --accent: #151a1e;
+  --accent-foreground: #f0f3f6;
+  --destructive: #f97782;
+  --border: #1b1f23;
+  --input: #1b1f23;
+  --ring: #2997ff;
+  --brand: #00e191;
+  --brand-strong: #2997ff;
+  --brand-soft: #2997ff1a;
+  --positive: #6aba90;
+  --positive-soft: #6aba901a;
+  --warning: #ffd07a;
+  --warning-soft: #3b2c14;
+  --danger: #f97782;
+  --danger-soft: #f977821a;
+  --info: #2997ff;
+  --info-soft: #2997ff1a;
+  --trade-buy: #6aba90;
+  --trade-buy-foreground: #0d2619;
+  --trade-sell: #f97782;
+  --trade-sell-foreground: #340e13;
+  --chart-1: #2997ff;
+  --chart-2: #6aba90;
+  --chart-3: #bfa3f5;
+  --chart-4: #ffd07a;
+  --chart-5: #f97782;
+  --overlay: #000000;
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --font-sans: "Aeonik Pro", "Helvetica Neue", sans-serif;
+  --font-display: "Aeonik Pro", "Helvetica Neue", sans-serif;
+  --font-weight-semibold: 500;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 0.875rem;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1rem;
+  --text-base: 0.875rem;
+  --text-base--line-height: 1rem;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
+  --color-brand-soft: var(--brand-soft);
+  --color-positive: var(--positive);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+  --color-info: var(--info);
+  --radius-lg: var(--radius);
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { @apply bg-background font-sans; }
+  body { @apply min-h-svh bg-background font-sans text-foreground antialiased; font-synthesis: none; }
+  button:not(:disabled) { cursor: pointer; }
+}
+
+/* Align dapp-kit's wallet control with the shared compact outline button. */
+header mysten-dapp-kit-connect-button {
+  font-family: "Aeonik Pro", "Helvetica Neue", sans-serif;
+}
+header mysten-dapp-kit-connect-button::part(trigger) {
+  font-family: "Aeonik Pro", "Helvetica Neue", sans-serif;
+  height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--foreground);
+  font-size: 13px;
+  font-weight: 500;
+}
+header mysten-dapp-kit-connect-button::part(trigger):hover {
+  background: var(--accent);
+}
+input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

@@ -1,15 +1,21 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
+import { AppProviders } from "./components/providers/AppProviders";
+import { SiteHeader } from "./components/layout/SiteHeader";
+import { StakePageModule } from "./modules/StakePageModule";
+import "./styles/global.css";
 
 function App() {
   return (
-    <div style={{ padding: 40 }}>
-      <h1>Aftermath Swap</h1>
-      <p>Empty starter page. Implement the task here.</p>
-    </div>
+    <AppProviders>
+      <div className="flex min-h-svh flex-col bg-background text-foreground">
+        <SiteHeader />
+        <StakePageModule />
+      </div>
+    </AppProviders>
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById("root")!);
-root.render(<App />);
+const rootElement = document.getElementById("root");
+if (!rootElement) throw new Error("Root element was not found.");
 
+createRoot(rootElement).render(<App />);
