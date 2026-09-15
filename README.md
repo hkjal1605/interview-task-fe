@@ -22,10 +22,10 @@ npm run build
 
 ## Environment variables
 
-Create `.env.local` with a Birdeye API key:
+The submission includes this `.env.local` configuration:
 
 ```text
-BIRDEYE_API_KEY=your_api_key
+BIRDEYE_API_KEY=4a7e46c8d47041ac9b841eeeee45857d
 ```
 
-The key is compiled into this client-side React application, so use a browser-restricted key for a public deployment.
+This is a free Birdeye API key and is highly rate limited. The app spaces its SUI and afSUI requests apart and refreshes prices every 15 seconds to stay within that limit.
